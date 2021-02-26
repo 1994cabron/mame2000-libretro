@@ -38,8 +38,6 @@ else ifneq ($(findstring win,$(shell uname -a)),)
 endif
 endif
 
-platform = funkey
-
 # system platform
 system_platform = unix
 ifeq ($(shell uname -a),)
@@ -337,11 +335,11 @@ else ifeq ($(platform), gcw0)
    
 else ifeq ($(platform), funkey)
    TARGET := $(TARGET_NAME)_libretro.so
-   OD_TOOLCHAIN ?= /opt/FunKey-sdk-2.0.0/
-   CC := $(OD_TOOLCHAIN)bin/arm-funkey-linux-musleabihf-gcc
-   CXX := $(OD_TOOLCHAIN)bin/arm-funkey-linux-musleabihf-g++
-   LD := $(OD_TOOLCHAIN)bin/arm-funkey-linux-musleabihf-gcc
-   AR = $(OD_TOOLCHAIN)bin/arm-funkey-linux-musleabihf-ar
+   #OD_TOOLCHAIN ?= /opt/FunKey-sdk-2.0.0/
+   #CC := $(OD_TOOLCHAIN)bin/arm-funkey-linux-musleabihf-gcc
+   #CXX := $(OD_TOOLCHAIN)bin/arm-funkey-linux-musleabihf-g++
+   #LD := $(OD_TOOLCHAIN)bin/arm-funkey-linux-musleabihf-gcc
+   #AR = $(OD_TOOLCHAIN)bin/arm-funkey-linux-musleabihf-ar
    fpic := -fPIC
   LDFLAGS += $(fpic) -shared -Wl,--version-script=link.T
   CFLAGS += -Ofast \
